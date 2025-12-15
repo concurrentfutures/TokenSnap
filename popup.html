@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TokenSnap</title>
+  <style>
+    body {
+      width: 300px;
+      min-height: 100px;
+      margin: 0;
+      padding: 15px;
+      background-color: #2F3136;
+      color: #DCDEE1;
+      font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      background-color: #40444B;
+      color: #DCDEE1;
+      border: 1px solid #202225;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    input:focus {
+      outline: none;
+      border-color: #5865F2;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #5865F2;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: #4752C4;
+    }
+    button:active {
+      background-color: #4048A3;
+    }
+    button:disabled {
+      background-color: #4F545C;
+      cursor: not-allowed;
+    }
+    a {
+      color: #00AFF4;
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    #loginContainer {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      gap: 10px;
+    }
+    #status {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 14px;
+      color: #43B581;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    #status.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <button id="copyButton" disabled>Copy Token</button>
+  <a id="toggleLogin">Log in with a token instead</a>
+  <div id="loginContainer">
+    <input id="tokenInput" type="text" placeholder="Enter Discord token">
+    <button id="loginButton" disabled>Log In</button>
+  </div>
+  <div id="status"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
